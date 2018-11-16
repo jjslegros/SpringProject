@@ -2,12 +2,12 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"
       xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
 <body>
-<div th:each="utilisateur : ${utilisateurs}">
-
-        <div th:switch="${utilisateur.first_name}"> 
+<div th:each="utilisateur : ${listUser}">
+        <div th:switch="${utilisateur.name}"> 
             <div >
-                <p th:utext="${utilisateur.last_name}"></p>
+                <p th:utext="${utilisateur.lastName}"></p>
             </div>
-        </div></div>
+        </div>
+</div>
 </body>
 </html>

@@ -1,13 +1,53 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"
       xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+      <head>
+      	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  		<style th:inline="text">
+body{
+    background: url([[@{/image/horse-2255876_1920.jpg}]])
+                no-repeat center center fixed;
+}
+td {
+background-color:white;
+}
+</style>
+      </head>
 <body>
-<div th:each="utilisateur : ${listUser}">
-        <div th:switch="${utilisateur.name}"> 
-            <div >
-                <p th:utext="${utilisateur.lastName}"></p>
-            </div>
-        </div>
-</div>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <a class="navbar-brand" href="#">Menu</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+    <div class="navbar-nav">
+      <a class="nav-item nav-link active" href="#">Liste des Utilisateurs <span class="sr-only">(current)</span></a>
+
+   <a class="nav-item nav-link" th:href="@{/login}">Deconnexion</a></div>
+
+    </div>
+  </div>
+</nav>
+
+<br><br><br><br><br><br>
+<div class="container">
+ <div class="row">
+ <table class='table table-stripped' th:each="utilisateur : ${listUser}">
+		 <thead class="thead-dark">
+				<tr><th>Prénom</th><th>Nom</th><th>Email</th></tr> 
+			</thead >
+			<tbody>
+			<tr><td th:utext="${utilisateur.name}"></td>
+                <td th:utext="${utilisateur.lastName}"></td>
+                <td th:utext="${utilisateur.email}"></td>
+             </tr>
+             </tbody>
+	 </table>
+ 	</div>
+	</div>		
+                
 </body>
 </html>
+

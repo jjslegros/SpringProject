@@ -1,7 +1,6 @@
 package com.example.springproject;
 
 
-
 import java.util.List;
 
 import org.springframework.stereotype.Controller;

@@ -34,11 +34,11 @@ background-color:white;
 <br><br><br><br><br><br>
 <div class="container">
  <div class="row">
- <table class='table table-stripped' th:each="utilisateur : ${listUser}">
+ <table class='table table-stripped'>
 		 <thead class="thead-dark">
 				<tr><th>Prénom</th><th>Nom</th><th>Email</th></tr> 
 			</thead >
-			<tbody>
+			<tbody  th:each="utilisateur : ${listUser}">
 			<tr><td th:utext="${utilisateur.name}"></td>
                 <td th:utext="${utilisateur.lastName}"></td>
                 <td th:utext="${utilisateur.email}"></td>

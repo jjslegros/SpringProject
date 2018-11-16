@@ -26,6 +26,7 @@ public class utilisateur {
                 "utilisateur[id=%d, firstName='%s', lastName='%s']",
                 id, firstName, lastName);
     }
+    
 
 	public Long getId() {
 		return id;
